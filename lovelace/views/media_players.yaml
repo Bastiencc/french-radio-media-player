@@ -374,7 +374,15 @@ cards:
                       radio: MTI
                       media: salon
                       
-                                            
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
                      
       - type: custom:mini-media-player
         entity: media_player.sdb           
