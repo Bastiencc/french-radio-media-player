@@ -1,0 +1,38 @@
+
+radio_station_salon:
+  name: 'Radio salon'
+  options:
+    - Aucune
+    - Skyrock
+    - NRJ
+    - Fun
+    - Nostalgie
+    - BFM
+    - Virgin
+    - FG
+    - MTI
+    - Scoop
+    - FGchic
+    - FGdeep
+    - FGunder
+    - Hitsradio
+  icon: mdi:radio
+
+radio_station_sdb:
+  name: 'Radio sdb'
+  options:
+    - Aucune
+    - Skyrock
+    - NRJ
+    - Fun
+    - Nostalgie
+    - BFM
+    - Virgin
+    - FG
+    - MTI
+    - Scoop
+    - FGchic
+    - FGdeep
+    - FGunder
+    - Hitsradio
+  icon: mdi:radio
