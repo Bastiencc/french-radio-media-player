@@ -1,0 +1,751 @@
+title: Media players
+icon: mdi:google-home
+cards:
+  - type: vertical-stack
+    cards:        
+      - type: custom:mini-media-player
+        entity: media_player.salon           
+        icon: mdi:google-home
+        artwork: cover
+        min_volume: 1
+        max_volume: 60
+        hide:
+          power_state: false
+          icon_state: false
+          info: true
+        shortcuts:
+          columns: 2 # Max buttons per row
+          hide_when_off: true
+          buttons:
+            - icon: mdi:volume-minus
+              type: service
+              id: script.down_vol_radio
+              data:
+                media: salon
+            - icon: mdi:volume-plus
+              type: service
+              id: script.up_vol_radio
+              data:
+                media: salon
+        
+      - type: conditional
+        conditions:
+          - entity: media_player.salon 
+            state_not: 'off'
+        card:
+            type: horizontal-stack
+            cards:
+              - type: conditional
+                conditions:
+                  - entity: input_select.radio_station_salon
+                    state: 'NRJ'
+                card:
+                  type: picture
+                  image: /local/img/radio/NRJ_selected.jpg?v=0.103
+                  tap_action:
+                    action: call-service
+                    service: script.stop_radio
+                    service_data:
+                      media: salon
+              - type: conditional
+                conditions:
+                  - entity: input_select.radio_station_salon
+                    state_not: 'NRJ'
+                card:
+                  type: picture
+                  image: /local/img/radio/NRJ.jpg?v=0.103
+                  tap_action:
+                    action: call-service
+                    service: script.start_radio
+                    service_data:
+                      radio: NRJ
+                      media: salon
+                      
+                      
+              - type: conditional
+                conditions:
+                  - entity: input_select.radio_station_salon
+                    state: 'Fun'
+                card:
+                  type: picture
+                  image: /local/img/radio/Fun_selected.jpg?v=0.103
+                  tap_action:
+                    action: call-service
+                    service: script.stop_radio
+                    service_data:
+                      media: salon
+              - type: conditional
+                conditions:
+                  - entity: input_select.radio_station_salon
+                    state_not: 'Fun'
+                card:
+                  type: picture
+                  image: /local/img/radio/Fun.jpg?v=0.103
+                  tap_action: 
+                    action: call-service
+                    service: script.start_radio
+                    service_data:
+                      radio: Fun
+                      media: salon
+                      
+                      
+                      
+              - type: conditional
+                conditions:
+                  - entity: input_select.radio_station_salon
+                    state: 'BFM'
+                card:
+                  type: picture
+                  image: /local/img/radio/BFM_selected.jpg?v=0.103
+                  tap_action:
+                    action: call-service
+                    service: script.stop_radio
+                    service_data:
+                      media: salon
+              - type: conditional
+                conditions:
+                  - entity: input_select.radio_station_salon
+                    state_not: 'BFM'
+                card:
+                  type: picture
+                  image: /local/img/radio/BFM.jpg?v=0.103
+                  tap_action:
+                    action: call-service
+                    service: script.start_radio
+                    service_data:
+                      radio: BFM
+                      media: salon
+                      
+                      
+                      
+              - type: conditional
+                conditions:
+                  - entity: input_select.radio_station_salon
+                    state: 'Skyrock'
+                card:
+                  type: picture
+                  image: /local/img/radio/Skyrock_selected.jpg?v=0.103
+                  tap_action:
+                    action: call-service
+                    service: script.stop_radio
+                    service_data:
+                      media: salon
+              - type: conditional
+                conditions:
+                  - entity: input_select.radio_station_salon
+                    state_not: 'Skyrock'
+                card:
+                  type: picture
+                  image: /local/img/radio/Skyrock.jpg?v=0.103
+                  tap_action:
+                    action: call-service
+                    service: script.start_radio
+                    service_data:
+                      radio: Skyrock
+                      media: salon
+                      
+                      
+                      
+              - type: conditional
+                conditions:
+                  - entity: input_select.radio_station_salon
+                    state: 'Nostalgie'
+                card:
+                  type: picture
+                  image: /local/img/radio/Nostalgie_selected.jpg?v=0.103
+                  tap_action:
+                    action: call-service
+                    service: script.stop_radio
+                    service_data:
+                      media: salon
+              - type: conditional
+                conditions:
+                  - entity: input_select.radio_station_salon
+                    state_not: 'Nostalgie'
+                card:
+                  type: picture
+                  image: /local/img/radio/Nostalgie.jpg?v=0.103
+                  tap_action:
+                    action: call-service
+                    service: script.start_radio
+                    service_data:
+                      radio: Nostalgie
+                      media: salon
+                      
+                      
+                      
+              - type: conditional
+                conditions:
+                  - entity: input_select.radio_station_salon
+                    state: 'Hitsradio'
+                card:
+                  type: picture
+                  image: /local/img/radio/Hitsradio_selected.jpg?v=0.103
+                  tap_action:
+                    action: call-service
+                    service: script.stop_radio
+                    service_data:
+                      media: salon
+              - type: conditional
+                conditions:
+                  - entity: input_select.radio_station_salon
+                    state_not: 'Hitsradio'
+                card:
+                  type: picture
+                  image: /local/img/radio/Hitsradio.jpg?v=0.103
+                  tap_action:
+                    action: call-service
+                    service: script.start_radio
+                    service_data:
+                      radio: Hitsradio
+                      media: salon
+                      
+                      
+                      
+
+      - type: conditional
+        conditions:
+          - entity: media_player.salon 
+            state_not: 'off'
+        card:
+            type: horizontal-stack
+            cards:
+              - type: conditional
+                conditions:
+                  - entity: input_select.radio_station_salon
+                    state: 'Scoop'
+                card:
+                  type: picture
+                  image: /local/img/radio/Scoop_selected.jpg?v=0.103
+                  tap_action:
+                    action: call-service
+                    service: script.stop_radio
+                    service_data:
+                      media: salon
+              - type: conditional
+                conditions:
+                  - entity: input_select.radio_station_salon
+                    state_not: 'Scoop'
+                card:
+                  type: picture
+                  image: /local/img/radio/Scoop.jpg?v=0.103
+                  tap_action: 
+                    action: call-service
+                    service: script.start_radio
+                    service_data:
+                      radio: Scoop
+                      media: salon
+                      
+                      
+              - type: conditional
+                conditions:
+                  - entity: input_select.radio_station_salon
+                    state: 'FG'
+                card:
+                  type: picture
+                  image: /local/img/radio/FG_selected.jpg?v=0.103
+                  tap_action:
+                    action: call-service
+                    service: script.stop_radio
+                    service_data:
+                      media: salon
+              - type: conditional
+                conditions:
+                  - entity: input_select.radio_station_salon
+                    state_not: 'FG'
+                card:
+                  type: picture
+                  image: /local/img/radio/FG.jpg?v=0.103
+                  tap_action:
+                    action: call-service
+                    service: script.start_radio
+                    service_data:
+                      radio: FG
+                      media: salon
+                      
+                      
+              - type: conditional
+                conditions:
+                  - entity: input_select.radio_station_salon
+                    state: 'FGchic'
+                card:
+                  type: picture
+                  image: /local/img/radio/FGchic_selected.jpg?v=0.103
+                  tap_action:
+                    action: call-service
+                    service: script.stop_radio
+                    service_data:
+                      media: salon
+              - type: conditional
+                conditions:
+                  - entity: input_select.radio_station_salon
+                    state_not: 'FGchic'
+                card:
+                  type: picture
+                  image: /local/img/radio/FGchic.jpg?v=0.103
+                  tap_action:
+                    action: call-service
+                    service: script.start_radio
+                    service_data:
+                      radio: FGchic
+                      media: salon
+                      
+                      
+                      
+              - type: conditional
+                conditions:
+                  - entity: input_select.radio_station_salon
+                    state: 'FGdeep'
+                card:
+                  type: picture
+                  image: /local/img/radio/FGdeep_selected.jpg?v=0.103
+                  tap_action:
+                    action: call-service
+                    service: script.stop_radio
+                    service_data:
+                      media: salon
+              - type: conditional
+                conditions:
+                  - entity: input_select.radio_station_salon
+                    state_not: 'FGdeep'
+                card:
+                  type: picture
+                  image: /local/img/radio/FGdeep.jpg?v=0.103
+                  tap_action:
+                    action: call-service
+                    service: script.start_radio
+                    service_data:
+                      radio: FGdeep
+                      media: salon
+                      
+                      
+                      
+              - type: conditional
+                conditions:
+                  - entity: input_select.radio_station_salon
+                    state: 'FGunder'
+                card:
+                  type: picture
+                  image: /local/img/radio/FGunder_selected.jpg?v=0.103
+                  tap_action:
+                    action: call-service
+                    service: script.stop_radio
+                    service_data:
+                      media: salon
+              - type: conditional
+                conditions:
+                  - entity: input_select.radio_station_salon
+                    state_not: 'FGunder'
+                card:
+                  type: picture
+                  image: /local/img/radio/FGunder.jpg?v=0.103
+                  tap_action:
+                    action: call-service
+                    service: script.start_radio
+                    service_data:
+                      radio: FGunder
+                      media: salon
+                      
+                      
+                      
+              - type: conditional
+                conditions:
+                  - entity: input_select.radio_station_salon
+                    state: 'MTI'
+                card:
+                  type: picture
+                  image: /local/img/radio/MTI_selected.jpg?v=0.103
+                  tap_action:
+                    action: call-service
+                    service: script.stop_radio
+                    service_data:
+                      media: salon
+              - type: conditional
+                conditions:
+                  - entity: input_select.radio_station_salon
+                    state_not: 'MTI'
+                card:
+                  type: picture
+                  image: /local/img/radio/MTI.jpg?v=0.103
+                  tap_action:
+                    action: call-service
+                    service: script.start_radio
+                    service_data:
+                      radio: MTI
+                      media: salon
+                      
+                                            
+                     
+      - type: custom:mini-media-player
+        entity: media_player.sdb           
+        icon: mdi:google-home
+        artwork: cover
+        min_volume: 1
+        max_volume: 60
+        hide:
+          power_state: false
+          icon_state: false
+          info: true
+        shortcuts:
+          columns: 2 # Max buttons per row
+          hide_when_off: true
+          buttons:
+            - icon: mdi:volume-minus
+              type: service
+              id: script.down_vol_radio
+              data:
+                media: sdb
+            - icon: mdi:volume-plus
+              type: service
+              id: script.up_vol_radio
+              data:
+                media: sdb
+   
+   
+      - type: conditional
+        conditions:
+          - entity: media_player.sdb 
+            state_not: 'off'
+        card:
+            type: horizontal-stack
+            cards:
+              - type: conditional
+                conditions:
+                  - entity: input_select.radio_station_sdb
+                    state: 'NRJ'
+                card:
+                  type: picture
+                  image: /local/img/radio/NRJ_selected.jpg?v=0.103
+                  tap_action:
+                    action: call-service
+                    service: script.stop_radio
+                    service_data:
+                      media: sdb
+              - type: conditional
+                conditions:
+                  - entity: input_select.radio_station_sdb
+                    state_not: 'NRJ'
+                card:
+                  type: picture
+                  image: /local/img/radio/NRJ.jpg?v=0.103
+                  tap_action:
+                    action: call-service
+                    service: script.start_radio
+                    service_data:
+                      radio: NRJ
+                      media: sdb
+                      
+                      
+              - type: conditional
+                conditions:
+                  - entity: input_select.radio_station_sdb
+                    state: 'Fun'
+                card:
+                  type: picture
+                  image: /local/img/radio/Fun_selected.jpg?v=0.103
+                  tap_action:
+                    action: call-service
+                    service: script.stop_radio
+                    service_data:
+                      media: sdb
+              - type: conditional
+                conditions:
+                  - entity: input_select.radio_station_sdb
+                    state_not: 'Fun'
+                card:
+                  type: picture
+                  image: /local/img/radio/Fun.jpg?v=0.103
+                  tap_action: 
+                    action: call-service
+                    service: script.start_radio
+                    service_data:
+                      radio: Fun
+                      media: sdb
+                      
+                      
+                      
+              - type: conditional
+                conditions:
+                  - entity: input_select.radio_station_sdb
+                    state: 'BFM'
+                card:
+                  type: picture
+                  image: /local/img/radio/BFM_selected.jpg?v=0.103
+                  tap_action:
+                    action: call-service
+                    service: script.stop_radio
+                    service_data:
+                      media: sdb
+              - type: conditional
+                conditions:
+                  - entity: input_select.radio_station_sdb
+                    state_not: 'BFM'
+                card:
+                  type: picture
+                  image: /local/img/radio/BFM.jpg?v=0.103
+                  tap_action:
+                    action: call-service
+                    service: script.start_radio
+                    service_data:
+                      radio: BFM
+                      media: sdb
+                      
+                      
+                      
+              - type: conditional
+                conditions:
+                  - entity: input_select.radio_station_sdb
+                    state: 'Skyrock'
+                card:
+                  type: picture
+                  image: /local/img/radio/Skyrock_selected.jpg?v=0.103
+                  tap_action:
+                    action: call-service
+                    service: script.stop_radio
+                    service_data:
+                      media: sdb
+              - type: conditional
+                conditions:
+                  - entity: input_select.radio_station_sdb
+                    state_not: 'Skyrock'
+                card:
+                  type: picture
+                  image: /local/img/radio/Skyrock.jpg?v=0.103
+                  tap_action:
+                    action: call-service
+                    service: script.start_radio
+                    service_data:
+                      radio: Skyrock
+                      media: sdb
+                      
+                      
+                      
+              - type: conditional
+                conditions:
+                  - entity: input_select.radio_station_sdb
+                    state: 'Nostalgie'
+                card:
+                  type: picture
+                  image: /local/img/radio/Nostalgie_selected.jpg?v=0.103
+                  tap_action:
+                    action: call-service
+                    service: script.stop_radio
+                    service_data:
+                      media: sdb
+              - type: conditional
+                conditions:
+                  - entity: input_select.radio_station_sdb
+                    state_not: 'Nostalgie'
+                card:
+                  type: picture
+                  image: /local/img/radio/Nostalgie.jpg?v=0.103
+                  tap_action:
+                    action: call-service
+                    service: script.start_radio
+                    service_data:
+                      radio: Nostalgie
+                      media: sdb
+                      
+              - type: conditional
+                conditions:
+                  - entity: input_select.radio_station_sdb
+                    state: 'Hitsradio'
+                card:
+                  type: picture
+                  image: /local/img/radio/Hitsradio_selected.jpg?v=0.103
+                  tap_action:
+                    action: call-service
+                    service: script.stop_radio
+                    service_data:
+                      media: sdb
+              - type: conditional
+                conditions:
+                  - entity: input_select.radio_station_sdb
+                    state_not: 'Hitsradio'
+                card:
+                  type: picture
+                  image: /local/img/radio/Hitsradio.jpg?v=0.103
+                  tap_action:
+                    action: call-service
+                    service: script.start_radio
+                    service_data:
+                      radio: Hitsradio
+                      media: sdb
+                      
+                      
+
+                      
+
+      - type: conditional
+        conditions:
+          - entity: media_player.sdb 
+            state_not: 'off'
+        card:
+            type: horizontal-stack
+            cards:
+                      
+              - type: conditional
+                conditions:
+                  - entity: input_select.radio_station_sdb
+                    state: 'Scoop'
+                card:
+                  type: picture
+                  image: /local/img/radio/Scoop_selected.jpg?v=0.103
+                  tap_action:
+                    action: call-service
+                    service: script.stop_radio
+                    service_data:
+                      media: sdb
+              - type: conditional
+                conditions:
+                  - entity: input_select.radio_station_sdb
+                    state_not: 'Scoop'
+                card:
+                  type: picture
+                  image: /local/img/radio/Scoop.jpg?v=0.103
+                  tap_action: 
+                    action: call-service
+                    service: script.start_radio
+                    service_data:
+                      radio: Scoop
+                      media: sdb
+                      
+                      
+              - type: conditional
+                conditions:
+                  - entity: input_select.radio_station_sdb
+                    state: 'FG'
+                card:
+                  type: picture
+                  image: /local/img/radio/FG_selected.jpg?v=0.103
+                  tap_action:
+                    action: call-service
+                    service: script.stop_radio
+                    service_data:
+                      media: sdb
+              - type: conditional
+                conditions:
+                  - entity: input_select.radio_station_sdb
+                    state_not: 'FG'
+                card:
+                  type: picture
+                  image: /local/img/radio/FG.jpg?v=0.103
+                  tap_action:
+                    action: call-service
+                    service: script.start_radio
+                    service_data:
+                      radio: FG
+                      media: sdb
+                      
+              - type: conditional
+                conditions:
+                  - entity: input_select.radio_station_sdb
+                    state: 'FGchic'
+                card:
+                  type: picture
+                  image: /local/img/radio/FGchic_selected.jpg?v=0.103
+                  tap_action:
+                    action: call-service
+                    service: script.stop_radio
+                    service_data:
+                      media: sdb
+              - type: conditional
+                conditions:
+                  - entity: input_select.radio_station_sdb
+                    state_not: 'FGchic'
+                card:
+                  type: picture
+                  image: /local/img/radio/FGchic.jpg?v=0.103
+                  tap_action:
+                    action: call-service
+                    service: script.start_radio
+                    service_data:
+                      radio: FGchic
+                      media: sdb
+                      
+                      
+                      
+              - type: conditional
+                conditions:
+                  - entity: input_select.radio_station_sdb
+                    state: 'FGdeep'
+                card:
+                  type: picture
+                  image: /local/img/radio/FGdeep_selected.jpg?v=0.103
+                  tap_action:
+                    action: call-service
+                    service: script.stop_radio
+                    service_data:
+                      media: sdb
+              - type: conditional
+                conditions:
+                  - entity: input_select.radio_station_sdb
+                    state_not: 'FGdeep'
+                card:
+                  type: picture
+                  image: /local/img/radio/FGdeep.jpg?v=0.103
+                  tap_action:
+                    action: call-service
+                    service: script.start_radio
+                    service_data:
+                      radio: FGdeep
+                      media: sdb
+                      
+                      
+                      
+              - type: conditional
+                conditions:
+                  - entity: input_select.radio_station_sdb
+                    state: 'FGunder'
+                card:
+                  type: picture
+                  image: /local/img/radio/FGunder_selected.jpg?v=0.103
+                  tap_action:
+                    action: call-service
+                    service: script.stop_radio
+                    service_data:
+                      media: sdb
+              - type: conditional
+                conditions:
+                  - entity: input_select.radio_station_sdb
+                    state_not: 'FGunder'
+                card:
+                  type: picture
+                  image: /local/img/radio/FGunder.jpg?v=0.103
+                  tap_action:
+                    action: call-service
+                    service: script.start_radio
+                    service_data:
+                      radio: FGunder
+                      media: sdb
+                      
+              - type: conditional
+                conditions:
+                  - entity: input_select.radio_station_sdb
+                    state: 'MTI'
+                card:
+                  type: picture
+                  image: /local/img/radio/MTI_selected.jpg?v=0.103
+                  tap_action:
+                    action: call-service
+                    service: script.stop_radio
+                    service_data:
+                      media: sdb
+              - type: conditional
+                conditions:
+                  - entity: input_select.radio_station_sdb
+                    state_not: 'MTI'
+                card:
+                  type: picture
+                  image: /local/img/radio/MTI.jpg?v=0.103
+                  tap_action:
+                    action: call-service
+                    service: script.start_radio
+                    service_data:
+                      radio: MTI
+                      media: sdb
+                                                              
+        
+
+                 
+                  
