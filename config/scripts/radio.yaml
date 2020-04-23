@@ -1,0 +1,70 @@
+up_vol_radio:
+  alias: Up volume on Media Player
+  sequence:
+    - service: media_player.volume_set
+      data_template:
+        entity_id: >
+          media_player.{{ media }}
+        volume_level: >
+          {% set next_vol = states['media_player.' + media].attributes.volume_level | float + 0.02 %}
+            {{ next_vol }}
+            
+down_vol_radio:
+  alias: Down volume on Media Player
+  sequence:
+    - service: media_player.volume_set
+      data_template:
+        entity_id: >
+          media_player.{{ media }}
+        volume_level: >
+          {% set next_vol = states['media_player.' + media].attributes.volume_level | float - 0.02 %}
+            {{ next_vol }}
+            
+stop_radio:
+  alias: Stop Radio on Media Player
+  sequence:
+    - service: media_player.media_stop
+      data_template:
+        entity_id: >
+          media_player.{{ media }}
+    - service: input_select.select_option
+      data_template:
+        entity_id: >
+          input_select.radio_station_{{ media }}
+        option: 'Aucune'
+          
+                
+start_radio:
+  alias: Play Radio on Media Player
+  sequence:
+    - service: input_select.select_option
+      data_template:
+        entity_id: >
+          input_select.radio_station_{{ media }}
+        option: '{{ radio }}'
+    - service: media_player.volume_set
+      data_template:
+        entity_id: >
+          media_player.{{ media }}
+        volume_level: '0.20'
+    - service: media_player.play_media
+      data_template:
+        entity_id: >
+          media_player.{{ media }}
+        media_content_id: >
+          {% if(radio == "Skyrock") %} http://icecast.skyrock.net/s/natio_mp3_128k
+          {% elif(radio == "NRJ") %} http://cdn.nrjaudio.fm/audio1/fr/30001/mp3_128.mp3?origine=fluxradios
+          {% elif(radio == "Fun") %} http://streaming.radio.funradio.fr/fun-1-44-128
+          {% elif(radio == "Nostalgie") %} http://cdn.nrjaudio.fm/audio1/fr/30601/mp3_128.mp3?origine=fluxradios
+          {% elif(radio == "BFM") %} http://chai5she.cdn.dvmr.fr/bfmbusiness
+          {% elif(radio == "Virgin") %} http://ais-live.cloud-services.paris:8000/virgin.mp3
+          {% elif(radio == "FG") %} http://radiofg.impek.com/fg
+          {% elif(radio == "MTI") %} http://radiomti.ice.infomaniak.ch/radiomti.mp3
+          {% elif(radio == "Scoop") %} http://radioscooplyon.ice.infomaniak.ch/radioscoop-lyon-128.mp3
+          {% elif(radio == "FGunder") %} http://radiofg.impek.com/ufg
+          {% elif(radio == "FGdeep") %} http://radiofg.impek.com/fgd
+          {% elif(radio == "FGchic") %} http://radiofg.impek.com/fgc
+          {% elif(radio == "Hitsradio") %} https://playerservices.streamtheworld.com/api/livestream-redirect/977_JAMZ.mp3
+          {% endif %}
+        media_content_type: 'audio/mp4' 
+        
