@@ -1,0 +1,28 @@
+- id: unset_radio_selection_salon
+  alias: 'unset radio selection salon'
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: media_player.salon
+      to: 'off'
+  action:
+    service: script.turn_on
+    entity_id: script.stop_radio
+    data:
+      variables:
+        media: salon
+      
+- id: unset_radio_selection_sdb
+  alias: 'unset radio selection sdb'
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: media_player.sdb
+      to: 'off'
+  action:
+    service: script.turn_on
+    entity_id: script.stop_radio
+    data:
+      variables:
+        media: sdb
+
