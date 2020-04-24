@@ -15,6 +15,8 @@ You can also keep only one media_player or add a new one (be sure to duplicate t
 
 You will find in the [assets](https://github.com/Bastiencc/radio-media-player/tree/master/assets) directory a sample file (.psd) in order to be able to add new images and radio.
 
+If you are looking for more radio : [http://fluxradios.blogspot.com](http://fluxradios.blogspot.com/p/flux-radios-francaise.html)
+
 ## Pictures
 
 ![sample1](https://i.ibb.co/vjWtXQk/radio-media-player.jpg)
