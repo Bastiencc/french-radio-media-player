@@ -47,6 +47,10 @@ start_radio:
         # entity_id: >
           # media_player.{{ media }}
         # volume_level: '0.20'
+    - service: media_player.media_stop
+      data_template:
+        entity_id: >
+          media_player.{{ media }}
     - service: media_player.play_media
       data_template:
         entity_id: >
