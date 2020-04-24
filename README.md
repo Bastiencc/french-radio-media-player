@@ -1,6 +1,6 @@
-# Radio Media Player for Home Assistant Lovelace 📻🕺
+# French Radio Media Player for Home Assistant Lovelace 📻🕺
 
-The Lovelace Radio Media Player view allows you to enjoy web radio using the [Mini Media Player custom card](https://github.com/kalkih/mini-media-player).
+The Lovelace French Radio Media Player view allows you to enjoy web radio using the [Mini Media Player custom card](https://github.com/kalkih/mini-media-player).
 
 ## Requirements
 
