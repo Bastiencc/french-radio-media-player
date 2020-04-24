@@ -42,11 +42,11 @@ start_radio:
         entity_id: >
           input_select.radio_station_{{ media }}
         option: '{{ radio }}'
-    - service: media_player.volume_set
-      data_template:
-        entity_id: >
-          media_player.{{ media }}
-        volume_level: '0.20'
+    # - service: media_player.volume_set
+      # data_template:
+        # entity_id: >
+          # media_player.{{ media }}
+        # volume_level: '0.20'
     - service: media_player.play_media
       data_template:
         entity_id: >
