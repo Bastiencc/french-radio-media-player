@@ -47,10 +47,6 @@ start_radio:
         # entity_id: >
           # media_player.{{ media }}
         # volume_level: '0.20'
-    - service: media_player.media_stop
-      data_template:
-        entity_id: >
-          media_player.{{ media }}
     - service: media_player.play_media
       data_template:
         entity_id: >
@@ -71,4 +67,14 @@ start_radio:
           {% elif(radio == "Hitsradio") %} https://playerservices.streamtheworld.com/api/livestream-redirect/977_JAMZ.mp3
           {% endif %}
         media_content_type: 'audio/mp4' 
+    - service: media_player.media_pause
+      data_template:
+        entity_id: >
+          media_player.{{ media }}
+    - delay: 
+        milliseconds: 800
+    - service: media_player.media_play
+      data_template:
+        entity_id: >
+          media_player.{{ media }}
         
